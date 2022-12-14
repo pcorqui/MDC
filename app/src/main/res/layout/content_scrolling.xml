@@ -17,17 +17,50 @@
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_padding_min"
+            android:layout_marginStart="@dimen/common_padding_min"
+            android:layout_marginEnd="@dimen/common_padding_min"
+            app:cardElevation="@dimen/common_padding_min"
+            android:clickable="true"
+            android:focusable="true">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/common_padding_default"
+                android:layout_marginStart="@dimen/common_padding_default"
+                android:layout_paddingEnd="@dimen/common_padding_default"
+                >
 
                 <ImageView
+                    android:id="@+id/ImgCard"
                     android:layout_width="@dimen/card_img_size"
                     android:layout_height="@dimen/card_img_size"
+                    android:src="@mipmap/ic_launcher"
+                    android:importantForAccessibility="no"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnBuy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/card_butn_buy"
+                    app:icon="@drawable/ic_shop"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ImgCard"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/card_btn_skip"
+                    app:layout_constraintEnd_toStartOf="@+id/btnBuy"
+                    app:layout_constraintTop_toTopOf="@+id/btnBuy"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"/>
+
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </com.google.android.material.card.MaterialCardView>
