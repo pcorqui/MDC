@@ -30,7 +30,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="@dimen/common_padding_default"
                 android:layout_marginStart="@dimen/common_padding_default"
-                android:layout_paddingEnd="@dimen/common_padding_default"
+                android:layout_marginEnd="@dimen/common_padding_default"
                 >
 
                 <ImageView
@@ -59,6 +59,72 @@
                     app:layout_constraintEnd_toStartOf="@+id/btnBuy"
                     app:layout_constraintTop_toTopOf="@+id/btnBuy"
                     style="@style/Widget.MaterialComponents.Button.TextButton"/>
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/card_title"
+                    android:textAppearance="?attr/textAppearanceHeadline5"
+                    android:layout_marginStart="@dimen/common_padding_default"
+                    app:layout_constraintStart_toEndOf="@+id/ImgCard"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:text="@string/large_text"
+                    android:textAppearance="?attr/textAppearanceHeadline5"
+                    android:maxLines="3"
+                    android:ellipsize="end"
+                    app:layout_constraintStart_toStartOf="@+id/tvTitle"
+                    app:layout_constraintEnd_toEndOf="@id/tvTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+                    app:layout_constraintBottom_toBottomOf="@+id/ImgCard"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_padding_min"
+            android:layout_marginStart="@dimen/common_padding_min"
+            android:layout_marginEnd="@dimen/common_padding_min">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- con el fin de que el constraint tome el control se le pone 0dp-->
+                <ImageView
+                    android:id="@+id/img_cover"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/card_img_cover_height"
+                    android:importantForAccessibility="no"
+                    android:background="@color/design_default_color_secondary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvTitleAlt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/card_title"
+                    android:textAppearance="?attr/textAppearanceHeadline5"
+                    android:layout_margin="@dimen/common_padding_default"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/img_cover"
+                    app:layout_constraintEnd_toEndOf="parent"></TextView>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textUri"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTitleAlt"/>
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
